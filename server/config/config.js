@@ -8,12 +8,21 @@ process.env.PORT = process.env.PORT || 3000;
 //===========
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
+//============
+// vencimiento de token
+//===========
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+//============
+// seed de autenticacion
+//===========
+process.env.seed = process.env.seed || 'ESTE-ES-ESL-SEED-DE-DESARROLLO';
 
 //============
 // Base de datos
 //===========
 
-let urlDB
+let urlDB;
 
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/cafe';
